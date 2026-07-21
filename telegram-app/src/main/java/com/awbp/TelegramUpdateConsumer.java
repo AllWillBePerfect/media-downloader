@@ -18,13 +18,21 @@ public class TelegramUpdateConsumer implements LongPollingUpdateConsumer {
 
     @Override
     public void consume(List<Update> updates) {
-        try {
-            dispatcher.dispatch(updates);
-            for (Update update : updates) {
-                log.info(update.getMessage().getChatId().toString());
+        for (Update update : updates) {
+            if (!update.hasMessage()) {
+                continue;
             }
-        } catch (TelegramApiException e) {
-            throw new RuntimeException(e);
+
+            try {
+                dispatcher.dispatch(update);
+                log.info(
+                        "Processed Telegram update {} for chat {}",
+                        update.getUpdateId(),
+                        update.getMessage().getChatId()
+                );
+            } catch (RuntimeException | TelegramApiException e) {
+                log.error("Failed to process Telegram update {}", update.getUpdateId(), e);
+            }
         }
     }
 }
