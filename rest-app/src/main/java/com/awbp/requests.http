@@ -1,0 +1,13 @@
+POST http://localhost:8080/api/v1/downloads
+Content-Type: application/json
+
+{
+  "deliveryType": "TELEGRAM",
+  "userId": 1,
+  "url": "https://www.youtube.com/watch?v=xvFZjo5PgG0",
+  "type": "VIDEO",
+  "target": "1415705252"
+}
+
+### Get download
+GET http://localhost:8080/api/v1/downloads/27d9fb38-0c4e-4651-a3fb-10cca4d2e657

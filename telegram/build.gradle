@@ -1,0 +1,7 @@
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+
+    implementation 'org.telegram:telegrambots-longpolling:8.3.0'
+    implementation 'org.telegram:telegrambots-client:8.3.0'
+}

@@ -1,0 +1,22 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+dependencies {
+
+    implementation project(":core")
+    implementation project(":persistence")
+    implementation project(":kafka")
+    implementation project(":telegram")
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-kafka'
+
+    runtimeOnly 'org.postgresql:postgresql'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+    implementation 'org.telegram:telegrambots-longpolling:8.3.0'
+    implementation 'org.telegram:telegrambots-client:8.3.0'
+
+}

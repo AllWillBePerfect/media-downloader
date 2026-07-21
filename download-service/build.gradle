@@ -1,0 +1,19 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+dependencies {
+
+    implementation project(":core")
+    implementation project(":persistence")
+    implementation project(":downloader")
+    implementation project(":kafka")
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-kafka'
+
+    runtimeOnly 'org.postgresql:postgresql'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+}

@@ -1,0 +1,13 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
+dependencies {
+    implementation project(":core")
+    implementation project(":telegram")
+
+    implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+
+    implementation 'org.telegram:telegrambots-longpolling:8.3.0'
+    implementation 'org.telegram:telegrambots-client:8.3.0'
+}
